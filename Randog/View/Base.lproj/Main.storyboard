@@ -18,21 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQu-JU-2tI">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M7Z-ub-prL">
                                 <rect key="frame" x="16" y="20" width="343" height="627"/>
-                            </imageView>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-je-Hbv">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="216"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="HgN-Ds-R1l"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQu-JU-2tI">
+                                        <rect key="frame" x="0.0" y="216" width="343" height="411"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="411" id="Y7L-DR-CrQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cu5-je-Hbv" firstAttribute="leading" secondItem="M7Z-ub-prL" secondAttribute="leading" id="1pX-2T-OnB"/>
+                                    <constraint firstItem="cu5-je-Hbv" firstAttribute="top" secondItem="M7Z-ub-prL" secondAttribute="top" id="C28-Gu-aQh"/>
+                                    <constraint firstItem="PQu-JU-2tI" firstAttribute="leading" secondItem="M7Z-ub-prL" secondAttribute="leading" id="HMT-ja-TZs"/>
+                                    <constraint firstItem="PQu-JU-2tI" firstAttribute="top" secondItem="cu5-je-Hbv" secondAttribute="bottom" id="S8l-Mb-rkr"/>
+                                    <constraint firstItem="PQu-JU-2tI" firstAttribute="top" secondItem="cu5-je-Hbv" secondAttribute="bottom" id="X6K-Vi-FQp"/>
+                                    <constraint firstAttribute="trailing" secondItem="PQu-JU-2tI" secondAttribute="trailing" id="XxA-Nm-sSw"/>
+                                    <constraint firstAttribute="trailing" secondItem="cu5-je-Hbv" secondAttribute="trailing" id="aPz-d4-Nae"/>
+                                    <constraint firstAttribute="bottom" secondItem="PQu-JU-2tI" secondAttribute="bottom" id="wRm-6v-0c6"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PQu-JU-2tI" secondAttribute="trailing" constant="16" id="F04-VY-kwL"/>
-                            <constraint firstItem="PQu-JU-2tI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NTK-Pn-Ei5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PQu-JU-2tI" secondAttribute="bottom" constant="20" id="Ndj-WV-Bam"/>
-                            <constraint firstItem="PQu-JU-2tI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zcz-AO-4nA"/>
+                            <constraint firstItem="M7Z-ub-prL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Gf3-1W-KjW"/>
+                            <constraint firstItem="M7Z-ub-prL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mpm-rh-7Jm"/>
+                            <constraint firstAttribute="bottom" secondItem="M7Z-ub-prL" secondAttribute="bottom" constant="20" symbolic="YES" id="YPt-j3-kBQ"/>
+                            <constraint firstItem="M7Z-ub-prL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jDd-IE-KWg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="PQu-JU-2tI" id="nnc-IJ-xbL"/>
+                        <outlet property="pickerView" destination="cu5-je-Hbv" id="5Hm-AB-37D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
